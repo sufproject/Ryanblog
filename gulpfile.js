@@ -124,12 +124,14 @@ function css() {
 }
 
 function ignoreFilecss(){
-    // var ignoreFileClearn = ignoreFile.replace('!','');
     return gulp
         .src(ignoreFile)
         .pipe(plumber())
         .pipe(sass({ outputStyle: "expanded" }))
+        .pipe(gulp.dest(csopDir))
+        .pipe(postcss([cssnano()]))
         .pipe(gulp.dest(csopDir));
+    // var ignoreFileClearn = ignoreFile.replace('!','');
     //.pipe(browsersync.stream());
 }
 

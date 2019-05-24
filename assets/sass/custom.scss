@@ -1,7 +1,9 @@
 @import "bootstrap/functions";
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
-@import 'custom/custom-header';
+@import 'custom/variables';
+@import 'custom/global';
+@import 'custom/header';
 @import 'custom/navigation';
-@import 'custom/custom-container';
-@import 'custom/custom-footer';
+@import 'custom/container';
+@import 'custom/footer';
