@@ -1,0 +1,15 @@
+#masthead {
+  //background-color:$primary;
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    background-color: rgba(black, .3);
+    width: 100%;
+    height: 300px;
+    //background:url('../images/topbg.jpg') no-repeat top center;
+  }
+}

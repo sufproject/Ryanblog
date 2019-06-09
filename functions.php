@@ -130,7 +130,7 @@ add_action('widgets_init', 'ryanblog_widgets_init');
 function ryanblog_scripts()
 {
     wp_enqueue_style('ryanblog-style-base', get_template_directory_uri() . '/assets/css/common.min.css');
-    wp_enqueue_style('ryanblog-style-custom', get_template_directory_uri() . '/assets/css/custom.css');
+    wp_enqueue_style('ryanblog-style-custom', get_template_directory_uri() . '/assets/css/dooioomoo.css');
     wp_enqueue_script('ryanblog-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true);
     wp_enqueue_script('ryanblog-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true);
 

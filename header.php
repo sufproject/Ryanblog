@@ -51,4 +51,4 @@
 
 	<div id="content" class="site-content">
         <div class="container">
-            <div class="row content-page-main-wrap shadow-sm">
+            <div class="row content-page-main-wrap">

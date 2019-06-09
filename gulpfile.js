@@ -49,7 +49,7 @@ var siteDir = './',
     csopDir = asseDir + 'css/',
     jsopDir = asseDir + 'js/',
     sassDir = asseDir + 'sass/',
-    ignoreFile = [sassDir + 'custom.scss',sassDir + 'admin.scss'],
+    ignoreFile = [sassDir + 'dooioomoo.scss',sassDir + 'admin.scss'],
     sassfile = [],
     ignoreFilePlug = '';
 
