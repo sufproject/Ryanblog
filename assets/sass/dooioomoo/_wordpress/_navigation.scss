@@ -1,7 +1,55 @@
+/**
+// container class
+#header .primary-menu{}
+
+// container class first unordered list
+#header .primary-menu ul {}
+
+//unordered list within an unordered list
+#header .primary-menu ul ul {}
+
+ // each navigation item
+#header .primary-menu li {}
+
+// each navigation item anchor
+#header .primary-menu li a {}
+
+// unordered list if there is drop down items
+#header .primary-menu li ul {}
+
+// each drop down navigation item
+#header .primary-menu li li {}
+
+// each drap down navigation item anchor
+#header .primary-menu li li a {}
+
+// Class for Current Page
+.current_page_item{}
+
+// Class for Current Category
+.current-cat{}
+
+// Class for any other current Menu Item
+.current-menu-item{}
+
+// Class for a Category
+.menu-item-type-taxonomy{}
+
+// Class for Post types
+.menu-item-type-post_type{}
+
+// Class for any custom links
+.menu-item-type-custom{}
+
+// Class for the home Link
+.menu-item-home{}
+ */
+
 #site-navigation {
   width: 100%;
-  display: block;
   position: relative;
+  display: flex;
+  justify-content: flex-end;
 
   .menu-toggle {
     display: none;
@@ -15,10 +63,12 @@
 
       &.menu {
         display: flex;
-        align-items: center;
+        flex: 1 0 auto;
         justify-content: space-between;
         flex-wrap: nowrap;
         background-color: $menubg;
+        align-items: stretch;
+        align-content: stretch;
 
         li {
           position: relative;
@@ -43,10 +93,9 @@
             display: block;
             padding: $grid-gutter-width /2 $grid-gutter-width /2;
             color: $menufontcolor;
-            text-align: left;
 
             &:hover {
-              background-color: rgba($menuhoverbg, .8);
+              background-color: rgba($black, .8);
               color: lighten($menufonthovercolor, 80%);
               box-shadow: 0 3px 3px rgba(black, .2);
             }
@@ -54,13 +103,23 @@
         }
 
         > li {
-          flex: auto;
-
+          flex:auto;
+          align-items: center;
+          justify-content: center;
+          height:30px;
           a {
             text-align: center;
+            height: 100%;
+            vertical-align: middle;
+            justify-content: center;
+            align-items: center;
+            display:flex;
+            font-size: 16px;
+            font-weight: 600;
+            text-shadow: 0px 0px 3px rgba(0,0,0,.6);
 
             &:hover {
-
+              border-radius:5px;
             }
           }
 
@@ -88,7 +147,7 @@
               }
 
               a {
-                text-align: left;
+
               }
             }
           }
@@ -100,7 +159,19 @@
     }
   }
 }
-
+body{
+  &.home{
+    #site-navigation{
+      .menu{
+        > li{
+          a{
+            color:#fff;
+          }
+        }
+      }
+    }
+  }
+}
 @include media-breakpoint-down(sm) {
   body {
     font-size: 1rem;
@@ -143,6 +214,7 @@
         }
       }
     }
+
 
     .menu-toggle {
       display: block;
