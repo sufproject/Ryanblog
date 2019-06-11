@@ -1,0 +1,11 @@
+a{
+  &.post-thumbnail{
+    overflow: hidden;
+    line-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    position:relative;
+  }
+}
