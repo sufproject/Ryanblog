@@ -26,6 +26,7 @@ input[type=submit],
 button {
   @extend .btn;
   @include button-variant($primary, $primary);
+  color:$body-bg;
 }
 
 label{

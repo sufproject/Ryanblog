@@ -351,11 +351,24 @@ body {
     border-right: 1px solid #eee;
   }
 
+  .prev,.next{
+    &:hover{
+      background-color:$primary;
+      color: $body-bg;
+    }
+  }
+
   .page-numbers {
     border-right: 1px solid #eee;
-
+    &:last-child{
+      border-right:0;
+    }
     .page-item {
       @extend .page_button;
+      &:hover{
+        background-color:$primary;
+        color: $body-bg;
+      }
     }
 
     .page-item {
