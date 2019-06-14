@@ -1,6 +1,8 @@
 @import 'widgets/menu';
 
 .widget {
+  margin-bottom: 30px;
+
   ol, ul {
     list-style: none;
     margin: 0;
@@ -20,8 +22,32 @@
     }
   }
 
-  .widget-title{
+  .widget-title {
     text-align: right;
-    border-bottom:3px solid $black;
+    border-right: 5px solid #000;
+    padding-right: 10px;
+    padding-top: 0;
+    padding-bottom: 0;
+    line-height: 1.3rem;
+    position: relative;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    margin-top: 0;
+
+    &::after {
+      content: "";
+      position: relative;
+      bottom: -15px;
+      width: 100%;
+      border-bottom: 3px dotted #f7f7f7;
+      height: 1px;
+      display: block;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .widget {
+    margin-bottom: 60px;
   }
 }
