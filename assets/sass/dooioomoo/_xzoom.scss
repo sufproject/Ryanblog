@@ -1,87 +1,133 @@
-.xzoom-container{
+/* Compatibility styles for frameworks like bootstrap, foundation e.t.c */
+
+.xzoom-source img, .xzoom-preview img, .xzoom-lens img {
+  display: block;
+  max-width: none;
+  max-height: none;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+
+/* --------------- */
+
+/* xZoom Styles below */
+.xzoom-container {
   display: inline-block;
-  .xzoom{
-    @include box-shadow(0px 0px 3px 0px rgba($black,.3));
-  }
-  .xzoom-thumbs{
-    text-align: center;
-    margin-bottom: 10px;
-  }
-  .xzoom2, .xzoom3, .xzoom4, .xzoom5 {
-    @include box-shadow(0px 0px 3px 0px rgba($black,.3));
-  }
-  .xzoom-source img, .xzoom-preview img, .xzoom-lens img{
-    display: block;
-    max-width: none;
-    max-height: none;
-    -webkit-transition: none;
-    -moz-transition: none;
-    -o-transition: none;
-    transition: none;
-  }
-  .xzoom-gallery, .xzoom-gallery2, .xzoom-gallery3, .xzoom-gallery4, .xzoom-gallery5 {
-    border: 1px solid #f7f7f7;
-    margin-left: 5px;
-    margin-bottom: 10px;
-  }
-  .xzoom-source, .xzoom-hidden {
-    display: block;
-    position: static;
-    float: none;
-    clear: both;
-  }
+}
 
-  /* Everything out of border is hidden */
-  .xzoom-hidden {
-    overflow: hidden;
-  }
+.xzoom-thumbs {
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  display: flex;
+  flex: 1 0 auto;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: -5px;
+  margin-right: -5px;
 
-  /* Preview */
-  .xzoom-preview {
-    border: 1px solid #f7f7f7;
-    background: #2f4f4f;
-    @include box-shadow(0px 0px 3px 0px rgba($black,.3));
+  a {
+    padding: 5px;
   }
+}
 
-  /* Lens */
-  .xzoom-lens {
-    border: 1px solid #555;
-    @include box-shadow(0px 0px 3px 0px rgba($black,.3));
-    cursor: crosshair;
-  }
+.xzoom {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+}
 
-  /* Loading */
-  .xzoom-loading {
-    background-position: center center;
-    background-repeat: no-repeat;
-    border-radius: 100%;
-    opacity: .7;
-    background: url(../images/xloading.gif);
-    width: 48px;
-    height: 48px;
-  }
+.xzoom2, .xzoom3, .xzoom4, .xzoom5 {
+  @include box_shadow(0px 0px 5px rgba(black, .8));
+}
 
-  /* Additional class that applied to thumb when it is active */
-  .xactive {
-    @include box-shadow(0px 0px 3px 0px rgba($black,.3));
-    border: 1px solid $primary;
-  }
+.xzoom-wrap, .xzoom {
+  transition: all 0s;
+}
 
-  /* Caption */
-  .xzoom-caption {
-    position: absolute;
-    bottom: -43px;
-    left: 0;
-    background: #000;
+.xzoom-wrap {
+  position: relative;
+  display: block;
+  width: 100%;
+  @include box_shadow(0 1px 5px rgba($black, .2));
+  border: $xzoom-zoom-border-width solid $xzoom-border-defaultcolor;
+  img {
     width: 100%;
-    text-align: left;
+    height: auto;
   }
+}
 
-  .xzoom-caption span {
-    color: #fff;
-    display: block;
-    font-size: 0.75em;
-    font-weight: bold;
-    padding: 10px;
-  }
+/* Thumbs */
+.xzoom-gallery, .xzoom-gallery2, .xzoom-gallery3, .xzoom-gallery4, .xzoom-gallery5 {
+  border: $xzoom-border-width solid $xzoom-border-defaultcolor;
+  padding: 5px;
+  //margin-left: 5px;
+  //margin-bottom: 10px;
+}
+
+.xzoom-source, .xzoom-hidden {
+  display: block;
+  position: static;
+  float: none;
+  clear: both;
+}
+
+/* Everything out of border is hidden */
+.xzoom-hidden {
+  overflow: hidden;
+}
+
+/* Preview */
+.xzoom-preview {
+  border: 1px solid $xzoom-preview-border-color;
+  background: #2f4f4f;
+  box-sizing: border-box;
+  //padding:10px;
+  @include box_shadow(-0px -0px 10px rgba(black, 0.8));
+}
+
+/* Lens */
+.xzoom-lens {
+  border: 1px solid #555;
+  @include box_shadow(-0px -0px 10px rgba(0, 0, 0, 0.8));
+  cursor: crosshair;
+}
+
+/* Loading */
+.xzoom-loading {
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-radius: 100%;
+  opacity: .7;
+  background: url(../images/xloading.gif);
+  width: 48px;
+  height: 48px;
+}
+
+/* Additional class that applied to thumb when it is active */
+.xactive {
+  @include box_shadow(0px 0px 3px 0px rgba($primary, .8));
+  border: $xzoom-border-width solid $xzoom-border-color;
+}
+
+/* Caption */
+.xzoom-caption {
+  position: absolute;
+  bottom: -43px;
+  left: 0;
+  background: $xzoom-preview-border-color;
+  width: 100%;
+  text-align: left;
+}
+
+.xzoom-caption span {
+  color: $xzoom-caption-fontcolor;
+  font-family: Arial, sans-serif;
+  display: block;
+  font-size: 0.75em;
+  font-weight: bold;
+  padding: 10px;
 }
