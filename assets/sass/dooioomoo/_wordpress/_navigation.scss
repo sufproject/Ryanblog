@@ -161,20 +161,6 @@
   }
 }
 
-body {
-  &.home {
-    #site-navigation {
-      .menu {
-        > li {
-          a {
-            color: #fff;
-          }
-        }
-      }
-    }
-  }
-}
-
 @include media-breakpoint-down(sm) {
   body {
     font-size: 1rem;
